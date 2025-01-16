@@ -10,6 +10,7 @@ module.exports = defineConfig({
   projectId: 'pbjwow',
   e2e: {
     specPattern: "cypress/e2e/**/*.feature", // Busca solo archivos .feature en la carpeta e2e
+    stepDefinitions: "cypress/e2e", // Ruta a los archivos de pasos
     setupNodeEvents(on, config) {
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
