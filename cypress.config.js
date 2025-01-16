@@ -7,7 +7,7 @@ const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor
 
 
 module.exports = defineConfig({
-  projectId: '',
+  projectId: 'pbjwow',
   e2e: {
     specPattern: "cypress/e2e/**/*.feature", // Busca solo archivos .feature en la carpeta e2e
     setupNodeEvents(on, config) {
