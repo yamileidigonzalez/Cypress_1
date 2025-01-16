@@ -17,6 +17,7 @@ module.exports = defineConfig({
       addCucumberPreprocessorPlugin(on, config);
       return config;
     },
+    projectId: 'Cypress_1'
     //baseUrl: "http://localhost:3000", // Cambia según tu configuración local
     /*setupNodeEvents(on, config) {
       // implement node event listeners here
