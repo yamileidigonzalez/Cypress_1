@@ -17,6 +17,7 @@ module.exports = defineConfig({
       on("file:preprocessor", bundler);
       addCucumberPreprocessorPlugin(on, config);
       return config;
-    }
+    },
+    experimentalStudio: true
   }
 });
