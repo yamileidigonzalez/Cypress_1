@@ -7,6 +7,7 @@ const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor
 
 
 module.exports = defineConfig({
+  projectId: 'Cypress_1',
   e2e: {
     specPattern: "cypress/e2e/**/*.feature", // Busca solo archivos .feature en la carpeta e2e
     setupNodeEvents(on, config) {
@@ -16,11 +17,6 @@ module.exports = defineConfig({
       on("file:preprocessor", bundler);
       addCucumberPreprocessorPlugin(on, config);
       return config;
-    },
-    projectId: 'Cypress_1'
-    //baseUrl: "http://localhost:3000", // Cambia según tu configuración local
-    /*setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },*/
-  },
+    }
+  }
 });
