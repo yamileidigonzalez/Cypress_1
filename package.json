@@ -1,4 +1,6 @@
 {
+  
+  "testFiles": "**/*.feature",  
   "name": "cypress",
   "version": "1.0.0",
   "main": "cypress.config.js",
@@ -7,6 +9,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
+   
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,4 +24,4 @@
     "@cucumber/cucumber": "^11.2.0",
     "puppeteer": "^24.1.0"
   }
-}
+ }
