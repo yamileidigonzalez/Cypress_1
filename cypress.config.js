@@ -18,7 +18,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/**/*.feature", // Busca solo archivos .feature en la carpeta e2e
-    stepDefinitions: "cypress/e2e", // Ruta a los archivos de pasos
+    stepDefinitions: "cypress/support/**/", // Ruta a los archivos de pasos
     experimentalStudio: true
   }
 });
