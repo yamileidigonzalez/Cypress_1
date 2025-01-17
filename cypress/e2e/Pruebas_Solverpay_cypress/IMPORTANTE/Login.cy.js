@@ -85,7 +85,6 @@ describe('template spec', () => {
       
       cy.title().should('eq',"Panel de control")
       
-    })   
-    
+    })      
        
   })
