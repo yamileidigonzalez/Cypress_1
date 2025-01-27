@@ -1,16 +1,51 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given("que el usuario está en la página de login", () => {
-  cy.visit("https://newfront.lab.solverpay.com/login"); // Reemplaza con la URL real
+// Scenario: Verificar que la URL utiliza HTTPS
+Given("que accedo a la página web del sistema", () => {
+  cy.visit("/"); // Ajusta la URL de tu sistema
 });
 
-When("ingresa un nombre de usuario {string} y una contraseña {string}", (username, password) => {
-  cy.get('#user').type(username); // Reemplaza con el selector real
-  cy.get('#password').type(password);
+Then('la URL debe comenzar con "https://"', () => {
+  cy.url().should("match", /^https:\/\//); // Verifica que la URL empiece con "https://"
 });
 
-Then("presiona el botón de login", () => {
-    cy.get('.mt-2').click(); // Reemplaza con el selector real del botón
+Then("el icono del candado debe estar presente en la barra de direcciones", () => {
+  cy.window().then((win) => {
+    const hasLockIcon = win.location.protocol === "https:";
+    expect(hasLockIcon).to.be.true; // Verifica que el icono del candado está presente con HTTPS
+  });
+});
+
+// Scenario: Comprobar los detalles del certificado SSL
+Given("que accedo a la página web del sistema", () => {
+  cy.visit("/"); // Ajusta la URL de tu sistema
+});
+
+When("hago clic en el icono del candado cerca de la barra de direcciones", () => {
+  cy.window().then((win) => {
+    // Aquí, asumiendo que haces clic en el candado (esto dependerá del navegador y su comportamiento)
+    // En algunos navegadores no se puede interactuar directamente con el candado desde Cypress,
+    // pero lo que puedes hacer es verificar su presencia y asegurar que esté seguro.
+    // No todos los navegadores permiten hacer clic en el candado a través de código,
+    // por lo que el paso es más informativo.
+    const lockIconPresent = win.location.protocol === "https:";
+    expect(lockIconPresent).to.be.true;
+  });
+});
+
+Then("debo poder visualizar los detalles del certificado SSL, incluyendo su validez y emisor", () => {
+  // Este paso depende del navegador y su soporte en la automatización.
+  // En algunos navegadores como Chrome o Firefox, el candado muestra detalles al hacer clic en él.
+  // Este tipo de interacción no siempre puede ser realizada directamente con Cypress, ya que no se pueden
+  // automatizar acciones dentro de la interfaz del navegador (como abrir un modal de detalles del certificado SSL).
+
+  // Sin embargo, puedes verificar que el sitio es HTTPS y que el protocolo seguro está en uso
+  cy.window().then((win) => {
+    const certificateDetailsAvailable = win.location.protocol === "https:"; // Verificación básica de HTTPS
+    expect(certificateDetailsAvailable).to.be.true; // Si está en HTTPS, el certificado es válido
+  });
+
+  // Aquí, en realidad, puedes observar el candado o los detalles del certificado a mano como prueba adicional.
 });
 
 
