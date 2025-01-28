@@ -17,7 +17,12 @@ When('no ingresa un nombre de usuario ni contraseña', () => {
 Then('presiona el botón de login', () => {
   cy.get('.mt-2').click(); // Cambia el selector si es necesario
 });
-/*
+
+When('no ingresa un nombre de usuario ni contraseña', () => {
+  cy.get('input[name="username"]').clear();
+  cy.get('input[name="password"]').clear();
+});
+
 Then('el usuario debería ser redirigido al dashboard', () => {
   cy.url().should('include', '/dashboard'); // Cambia '/dashboard' por la ruta del dashboard
 });
@@ -31,6 +36,6 @@ Then('el usuario debería ver un mensaje de advertencia', () => {
     .should('be.visible')
     .and('contain', 'Por favor, complete todos los campos'); // Ajusta el mensaje según tu app
 });
-*/
+
 
 
