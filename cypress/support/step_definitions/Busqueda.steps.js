@@ -1,7 +1,5 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 
-const assert = require('assert');
-
 // Simulación de sistema de búsqueda
 const sistemaBusqueda = {
   realizarBusqueda: (termino) => {

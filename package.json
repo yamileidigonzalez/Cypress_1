@@ -57,10 +57,22 @@
   "dependencies": {
   
     
+  "@babel/plugin-transform-class-properties": "^7.25.9",
+  
+    
   "@cucumber/cucumber": "^11.2.0",
   
     
-  "puppeteer": "^24.1.0"
+  "core-js": "^3.40.0",
+  
+    
+  "glob": "^11.0.1",
+  
+    
+  "puppeteer": "^24.1.0",
+  
+    
+  "uuid": "^11.0.5"
   
   }
 }

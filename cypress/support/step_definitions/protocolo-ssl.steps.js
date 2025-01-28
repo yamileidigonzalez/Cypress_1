@@ -1,7 +1,10 @@
 import { When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import { Given as GivenLogin } from './Common_steps';
+import { GivenCommonSteps } from './Common_steps';
 
-GivenLogin();
+Given('que el usuario está en la página de login', () => {
+  console.log("Paso: que el usuario está en la página de dashboard");
+  GivenCommonSteps.navigateToDashboard();
+});
 
 When('observo la barra de direcciones', () => {
   // Cypress no tiene un método directo para observar la barra de direcciones,
