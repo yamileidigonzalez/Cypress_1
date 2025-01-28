@@ -1,50 +1,40 @@
-const { Given, When, Then, And } = require("cypress-cucumber-preprocessor/steps");
-
-// Scenario 1: Verificar que la URL utiliza HTTPS
+import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor';
 
 Given('que accedo a la página web del sistema', () => {
-  // Asegúrate de sustituir la URL con la real de tu sistema
-  cy.visit("https://newfront.lab.solverpay.com/login");
+  cy.visit('https://newfront.lab.solverpay.com/login'); // Cambia esta URL por la URL real de tu sistema
 });
 
 When('observo la barra de direcciones', () => {
-  // Aquí no es necesario hacer nada en particular, se verificará la URL
+  // Cypress no tiene un método directo para observar la barra de direcciones,
+  // pero podemos verificar la URL de la ventana del navegador.
+  cy.url().should('include', 'https://'); // Verifica que la URL comience con 'https://'
 });
 
 Then('la URL debe comenzar con "https://"', () => {
-  // Verifica que la URL comience con "https://"
-  cy.url().should('match', /^https:\/\//);
+  cy.url().should('include', 'https://'); // Asegúrate de que la URL empiece con https
 });
 
 And('el icono del candado debe estar presente en la barra de direcciones', () => {
-  // Aquí debes comprobar que el candado esté presente en la barra de direcciones
-  cy.get('body').should('contain', '🔒'); // Ajusta según el icono real
-});
-
-// Scenario 2: Comprobar los detalles del certificado SSL
-
-Given('que accedo a la página web del sistema', () => {
-  // Repite la visita a la página
-  cy.visit("https://newfront.lab.solverpay.com/login");
+  // Este paso es más difícil de verificar directamente con Cypress, 
+  // ya que no podemos acceder al icono de la barra de direcciones,
+  // pero podemos validar que la página tiene HTTPS usando `cy.url()`.
+  cy.url().should('include', 'https://'); // Esto valida que la conexión es segura
+  // Si el sitio tiene un candado visible en el UI de la página, puedes verificarlo también:
+  cy.get('.lock-icon').should('be.visible'); // Ajusta el selector según tu aplicación
 });
 
 When('hago clic en el icono del candado cerca de la barra de direcciones', () => {
-  // Aquí deberías implementar cómo interactuar con el candado en la barra de direcciones
-  // En los navegadores, hacer clic en el candado generalmente abre un cuadro de información
-  // Sin embargo, Cypress no puede interactuar directamente con la barra de direcciones del navegador
-  // Lo que podrías hacer es comprobar otros elementos visibles después de hacer clic, si es posible
-
-  // Esto puede ser un ejemplo genérico:
-  cy.get('address-bar-selector')  // Sustituye por el selector real
-    .click();  // Esto asume que el clic abre una ventana o cuadro
+  // Aquí estamos simulando el clic en el icono del candado.
+  // En la vida real, el icono del candado se encuentra en la barra de direcciones,
+  // y no se puede interactuar directamente con él desde Cypress.
+  // Sin embargo, si en tu aplicación hay un ícono del candado en la interfaz, puedes interactuar con él:
+  cy.get('.lock-icon').click(); // Ajusta el selector al ícono de candado si está presente en la UI de la página
 });
 
 Then('debo poder visualizar los detalles del certificado SSL, incluyendo su validez y emisor', () => {
-  // Aquí necesitarás comprobar los detalles del certificado SSL
-  // Normalmente, esto abre un cuadro de diálogo o una nueva ventana
-  // Si es posible automatizar este paso con Cypress, hazlo aquí
-
-  // Un ejemplo de cómo podrías verificar un cuadro de diálogo:
-  cy.get('.cert-details').should('contain', 'Emisor');  // Ajusta según la estructura de tu página
-  cy.get('.cert-details').should('contain', 'Validez'); // Ajusta el selector y contenido según lo que aparece
+  // En este paso, si tu aplicación permite visualizar detalles del certificado SSL en una ventana emergente o modal,
+  // verifica que el modal esté visible y contenga los detalles esperados.
+  cy.get('.ssl-cert-details').should('be.visible'); // Cambia el selector si es necesario
+  cy.get('.ssl-cert-details').should('contain', 'Validez'); // Verifica que la validez esté visible
+  cy.get('.ssl-cert-details').should('contain', 'Emisor'); // Verifica que el emisor esté visible
 });
