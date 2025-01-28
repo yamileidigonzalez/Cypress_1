@@ -1,4 +1,4 @@
-import { When, Then, And } from '@badeball/cypress-cucumber-preprocessor';
+import { When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import { Given as GivenLogin } from './Common_steps';
 
 GivenLogin();
