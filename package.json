@@ -41,6 +41,12 @@
   "@cypress/browserify-preprocessor": "^3.0.2",
   
     
+  "common-tags": "^1.8.2",
+  
+    
+  "cucumber": "^6.0.7",
+  
+    
   "cypress": "^13.17.0",
   
     

@@ -8,11 +8,11 @@ When('ingresa un nombre de usuario {string} y una contraseña {string}', (userna
   cy.get('#user').type(username); // Reemplaza con el selector real
   cy.get('#password').type(password);
 });
-
+/*
 When('no ingresa un nombre de usuario ni contraseña', () => {
   cy.get('#user').clear(); // Asegúrate de que los campos estén vacíos
   cy.get('#password').clear();
-});
+});*/
 
 Then('presiona el botón de login', () => {
   cy.get('.mt-2').click(); // Cambia el selector si es necesario
