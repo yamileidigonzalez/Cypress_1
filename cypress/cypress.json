@@ -1,0 +1,6 @@
+{
+    "testFiles": "**/*.feature",
+    "pluginsFile": "cypress/plugins/index.js",
+    "supportFile": "cypress/support/index.js"
+  }
+  

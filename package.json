@@ -1,27 +1,78 @@
 {
   
-  "testFiles": "**/*.feature",  
+  "testFiles": "**/*.feature",
+  
   "name": "cypress",
+  
   "version": "1.0.0",
+  
   "main": "cypress.config.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1",
+  
+    
+  "cypress:open": "cypress open",
+  
+    
+  "cypress:run": "cypress run"
+  
   },
-   
+  
   "keywords": [],
+  
   "author": "",
+  
   "license": "ISC",
+  
   "description": "",
+  
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
-    "cypress": "^13.17.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+  
+    
+  "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
+  
+    
+  "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+  
+    
+  "@cypress/browserify-preprocessor": "^3.0.2",
+  
+    
+  "common-tags": "^1.8.2",
+  
+    
+  "cucumber": "^6.0.7",
+  
+    
+  "cypress": "^13.17.0",
+  
+    
+  "cypress-cucumber-preprocessor": "^4.3.1"
+  
   },
+  
   "dependencies": {
-    "@cucumber/cucumber": "^11.2.0",
-    "puppeteer": "^24.1.0"
+  
+    
+  "@babel/plugin-transform-class-properties": "^7.25.9",
+  
+    
+  "@cucumber/cucumber": "^11.2.0",
+  
+    
+  "core-js": "^3.40.0",
+  
+    
+  "glob": "^11.0.1",
+  
+    
+  "puppeteer": "^24.1.0",
+  
+    
+  "uuid": "^11.0.5"
+  
   }
- }
+}
