@@ -1,9 +1,7 @@
-import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor';
-const assert = require('assert');
+import { When, Then, And } from '@badeball/cypress-cucumber-preprocessor';
+import { Given as GivenLogin } from './Common_steps';
 
-Given('que accedo a la página web del sistema', () => {
-  cy.visit('https://newfront.lab.solverpay.com/login'); // Cambia esta URL por la URL real de tu sistema
-});
+GivenLogin();
 
 When('observo la barra de direcciones', () => {
   // Cypress no tiene un método directo para observar la barra de direcciones,
