@@ -1,4 +1,4 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then, And } from "@badeball/cypress-cucumber-preprocessor";
 
 // Scenario: Cerrar sesión del usuario
 Given("que estoy autenticado en el sistema", () => {
