@@ -2,7 +2,7 @@ import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 // Scenario: Verificar que la URL utiliza HTTPS
 Given("que accedo a la página web del sistema", () => {
-  cy.visit("/"); // Ajusta la URL de tu sistema
+  cy.visit("https://newfront.lab.solverpay.com/login"); // Ajusta la URL de tu sistema
 });
 
 Then('la URL debe comenzar con "https://"', () => {
@@ -18,7 +18,7 @@ Then("el icono del candado debe estar presente en la barra de direcciones", () =
 
 // Scenario: Comprobar los detalles del certificado SSL
 Given("que accedo a la página web del sistema", () => {
-  cy.visit("/"); // Ajusta la URL de tu sistema
+  cy.visit("https://newfront.lab.solverpay.com/login"); // Ajusta la URL de tu sistema
 });
 
 When("hago clic en el icono del candado cerca de la barra de direcciones", () => {
