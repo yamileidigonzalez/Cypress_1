@@ -1,4 +1,5 @@
 import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor';
+const assert = require('assert');
 
 Given('que accedo a la página web del sistema', () => {
   cy.visit('https://newfront.lab.solverpay.com/login'); // Cambia esta URL por la URL real de tu sistema
@@ -12,15 +13,6 @@ When('observo la barra de direcciones', () => {
 
 Then('la URL debe comenzar con "https://"', () => {
   cy.url().should('include', 'https://'); // Asegúrate de que la URL empiece con https
-});
-
-And('el icono del candado debe estar presente en la barra de direcciones', () => {
-  // Este paso es más difícil de verificar directamente con Cypress, 
-  // ya que no podemos acceder al icono de la barra de direcciones,
-  // pero podemos validar que la página tiene HTTPS usando `cy.url()`.
-  cy.url().should('include', 'https://'); // Esto valida que la conexión es segura
-  // Si el sitio tiene un candado visible en el UI de la página, puedes verificarlo también:
-  cy.get('.lock-icon').should('be.visible'); // Ajusta el selector según tu aplicación
 });
 
 When('hago clic en el icono del candado cerca de la barra de direcciones', () => {

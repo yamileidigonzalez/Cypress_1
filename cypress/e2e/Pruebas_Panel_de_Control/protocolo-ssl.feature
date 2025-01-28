@@ -8,8 +8,7 @@ Feature: Verificar el Protocolo SSL del sitio
     Given que accedo a la página web del sistema
     When observo la barra de direcciones
     Then la URL debe comenzar con "https://"
-    And el icono del candado debe estar presente en la barra de direcciones
-
+   
   Scenario: Comprobar los detalles del certificado SSL
     Given que accedo a la página web del sistema
     When hago clic en el icono del candado cerca de la barra de direcciones
