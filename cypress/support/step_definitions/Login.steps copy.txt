@@ -3,7 +3,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 //const { Given, When, Then } = require('cypress-cucumber-preprocessor/steps');
 
 
-Given("que el usuario está en la página de login", function () {
+Given("que el usuario está en la página de login", () => {
   console.log("Paso: que el usuario está en la página de login");
   //GivenCommonSteps.loginPage();  // Llamar al paso común
   console.log("He llegado aquí")
