@@ -26,9 +26,9 @@
 
 Cypress.Commands.add("login", (username, password) => {
     cy.visit("/logins");
-    cy.get("#username").type(username);
+    cy.get("#user").type(username);
     cy.get("#password").type(password);
-    cy.get("#loginButton").click();
+    cy.get(".mt-2").click();
   });
 
 Cypress.Commands.add('Texto', (selector, texto, t) => { 

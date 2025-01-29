@@ -1,1 +1,1 @@
-import 'cypress-cucumber-preprocessor/steps';
+import './commands';  // si tienes comandos personalizados
