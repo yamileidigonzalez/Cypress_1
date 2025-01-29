@@ -14,26 +14,10 @@ module.exports = defineConfig({
       on("file:preprocessor", bundler);
       addCucumberPreprocessorPlugin(on, config);
       return config;
-<<<<<<< HEAD
     },*/
     //specPattern: "cypress/e2e/**/*.feature", // Busca solo archivos .feature en la carpeta e2e
     //stepDefinitions: "cypress/support/step_definitions/*.js", // Ruta a los archivos de pasos 
     /*
-=======
-    },
-    specPattern: "cypress/e2e/**/*.feature", // Busca solo archivos .feature en la carpeta e2e
-    stepDefinitions: [
-      "cypress/e2e/**/*.steps.js",
-      "cypress/support/step_definitions/*.steps.js",
-    ],
-    //stepDefinitions: "cypress/support/step_definitions/*steps.js", // Ruta a los archivos de pasos
-    /*stepDefinitions: (spec) => {
-      if (spec.includes('Login.feature')) {
-        return 'cypress/support/step_definitions/Login.steps.js'; // Ruta al archivo con las definiciones
-      }
-      return 'cypress/support/step_definitions/*.{js,ts}';
-    },*/
->>>>>>> 1f42c239d06ca419bb467e5a6bd0934bac7c8655
     experimentalStudio: true
   }
  
